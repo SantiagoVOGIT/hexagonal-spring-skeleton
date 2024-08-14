@@ -1,8 +1,6 @@
-// src/shared/build.gradle.kts y src/bounded-context/build.gradle.kts
-plugins {
-    java
-}
-
-dependencies {
-    // dependencias específicas del módulo si las hay
+project(":bounded-context") {
+    dependencies {
+        implementation(project(":shared"))
+        //here you can add more dependencies if necessary
+    }
 }

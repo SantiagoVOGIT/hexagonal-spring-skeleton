@@ -9,16 +9,16 @@ plugins {
 group = "com.company.project"
 version = "0.0.1-SNAPSHOT"
 
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(17))
+    }
+}
+
 allprojects {
     apply(plugin = "java")
     apply(plugin = "io.spring.dependency-management")
     apply(plugin = "org.springframework.boot")
-
-    java {
-        toolchain {
-            languageVersion.set(JavaLanguageVersion.of(17))
-        }
-    }
 
     repositories {
         mavenCentral()
@@ -79,11 +79,6 @@ spotless {
     java {
         googleJavaFormat()
         removeUnusedImports()
-        trimTrailingWhitespace()
-        endWithNewline()
-    }
-    kotlin {
-        ktlint()
         trimTrailingWhitespace()
         endWithNewline()
     }
